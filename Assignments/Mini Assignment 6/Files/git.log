@@ -1,0 +1,29 @@
+commit cf870fabbc69053742cae31b2467ff9d85007766
+Author: Christian TONNESEN <ctonne2@teaching.CS.McGill.CA>
+Date:   Mon Nov 25 18:56:40 2019 -0500
+
+    Finished
+
+commit b7662b5beadfb9b593e25938610bdb3c2b0e64c0
+Author: Christian TONNESEN <ctonne2@teaching.CS.McGill.CA>
+Date:   Mon Nov 25 14:36:13 2019 -0500
+
+    Fixed main.c to include linked.h
+
+commit 37f4af19629c84681a168b475d6eeb4d18a69583
+Author: Christian TONNESEN <ctonne2@teaching.CS.McGill.CA>
+Date:   Fri Nov 22 13:21:49 2019 -0500
+
+    Finished parse()
+
+commit 85944169fe04bb590a4d7a64ebec32b9918b4679
+Author: Christian TONNESEN <ctonne2@teaching.CS.McGill.CA>
+Date:   Wed Nov 20 13:00:56 2019 -0500
+
+    Main, linked, and ssv first iterations
+
+commit 8078a1edf0ff024efe956afa16f9e2994e51cd30
+Author: Christian TONNESEN <ctonne2@teaching.CS.McGill.CA>
+Date:   Wed Nov 20 11:45:36 2019 -0500
+
+    Just the ssv

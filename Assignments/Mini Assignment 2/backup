@@ -1,0 +1,70 @@
+#!/bin/bash
+# Written in Bash
+
+# Christian Tonnesen
+# 260847409
+
+if [ "$#" -lt 3 ]; then
+	echo "You have the incorrect number of arguments. The correct syntax is: ./backup SWITCH FILES DEST MESSAGE. Please try again."
+	exit 1
+fi
+
+# If the minimum number of arguments are not passed, then it displays an error and exits the script
+
+if [[ $1 =~ "-?" ]]; then
+	if [ $1 != "-D" ]; then
+		echo "Please input the correct switch -D."
+		exit 1
+	fi
+fi
+
+# If there is a switch, the above if statements ensure it is only -D
+
+NoTDate=$(date '+%d-%m-%Y')
+
+Switch=0
+
+# Creates two variables: A date without the time and a switch integer variable
+
+if [ $1 = "-D" ]; then
+	Switch=1
+	shift
+fi	
+
+# In the presence of the switch, then the script sets the Switch variable to 1 and shifts all the variables. This essentially deletes the switch
+
+Destination=$2
+
+if [ ! -d $2 ]; then
+
+	mkdir $2
+
+fi
+
+# If the destination directory does not exist, then it is created
+
+tar -cvf $2/backup$NoTDate.tar $1
+
+chmod 600 $2/backup$NoTDate.tar
+
+# The files are .tar'd and then chmod'ed to change the permissions
+
+if [ $Switch -eq 1 ]; then
+
+	rm -r $1/*
+
+fi
+
+# If the Switch variable equals 1, then the files of the source directory are deleted
+
+shift 2
+
+# All the variables besides the message ones are deleted
+
+Message="$*"
+
+# All of the message variables are concatenated into one variable
+
+echo [$NoTDate $(date +%H:%I) $Message] >> $Destination/backups.log
+
+# A message containing the date, time, and message variable are appended to a backups.log file
